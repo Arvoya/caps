@@ -4,12 +4,14 @@
 
 ### Requirements
 
-For development, you will only need [Node](http://nodejs.org/) installed in your environment.
-Please use the appropriate [Editorconfig](http://editorconfig.org/) plugin for your Editor (not mandatory).
+For development, you will only need [Node](http://nodejs.org/) installed in your
+environment.
+Please use the appropriate [Editorconfig](http://editorconfig.org/) plugin for your
+Editor (not mandatory).
 
 ### Install
 
-    git clone https://github.com/ORG/PROJECT.git
+    git clone git@github.com:Arvoya/caps.git
     cd PROJECT
     npm install
 
@@ -24,13 +26,35 @@ Any environment configuration steps.
 
 ## Architecture
 
-Describe how the project is structured.
+![Architecture](./assets/data-model.png)
+
+```bash
+
+├── LICENSE
+├── README.md
+├── assets
+│   └── data-model.png
+├── driver
+│   ├── driver-handler.test.js
+│   ├── handler.js
+│   └── index.js
+├── eventPool.js
+├── hub.js
+├── package-lock.json
+├── package.json
+└── vendor
+    ├── handler.js
+    ├── index.js
+    └── vendor-hanlder.test.js
+
+```
 
 ### Languages & tools
 
 * JavaScript
 * Jest
 * Node
+* Chance
 
 ## Change Log
 
