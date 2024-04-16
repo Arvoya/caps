@@ -13,10 +13,6 @@ let state = {
   },
 };
 
-driverListening.pickedUP();
-driverListening.droppingOff();
-vendor.delivered();
-
 events.on("pickup", (payload) => {
   state = {
     event: "pickup",
@@ -43,5 +39,8 @@ events.on("delivered", (payload) => {
   };
   console.log("EVENT:", state);
 });
+
+driverListening.listen();
+vendor.delivered();
 
 vendor.makePayload();
