@@ -1,12 +1,11 @@
 const events = require("../eventPool.js");
 const handler = require("./handler.js");
 
-function pickedUP() {
-  events.on("pickup", (payload) => handler.transit(events, payload));
+class Driver {
+  listen() {
+    events.on("pickup", (payload) => handler.transit(events, payload));
+    events.on("inTransit", (payload) => handler.delivered(events, payload));
+  }
 }
 
-function droppingOff() {
-  events.on("inTransit", (payload) => handler.delivered(events, payload));
-}
-
-module.exports = { pickedUP, droppingOff };
+module.exports = new Driver();
