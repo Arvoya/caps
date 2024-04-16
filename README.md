@@ -30,22 +30,31 @@ Any environment configuration steps.
 
 ```bash
 
+├── .DS_Store
+├── .eslintrc.json
+├── .github
+│   └── workflows
+│       └── node.yml
+├── .gitignore
 ├── LICENSE
 ├── README.md
 ├── assets
+│   ├── .DS_Store
 │   └── data-model.png
-├── driver
-│   ├── driver-handler.test.js
-│   ├── handler.js
-│   └── index.js
-├── eventPool.js
+├── clients
+│   ├── driver
+│   │   ├── driver-handler.test.js
+│   │   ├── handler.js
+│   │   └── index.js
+│   ├── socket.js
+│   └── vendor
+│       ├── handler.js
+│       ├── index.js
+│       └── vendor-hanlder.test.js
 ├── hub.js
 ├── package-lock.json
 ├── package.json
-└── vendor
-    ├── handler.js
-    ├── index.js
-    └── vendor-hanlder.test.js
+└── server
 
 ```
 
@@ -55,7 +64,12 @@ Any environment configuration steps.
 * Jest
 * Node
 * Chance
+* Nodemon
+* socket.io
+* socket.io-client
 
 ## Change Log
+
+0.0.2 - Socket.io refactor
 
 0.0.1 - Initial release
