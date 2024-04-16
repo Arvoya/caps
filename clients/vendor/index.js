@@ -26,5 +26,7 @@ function delivered() {
   }, 2000);
 }
 
-makePayload();
+setInterval(() => {
+  makePayload();
+}, 5000);
 delivered();

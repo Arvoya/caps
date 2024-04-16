@@ -26,7 +26,13 @@ Any environment configuration steps.
 
 ## Architecture
 
+### Event Driven Applications
+
 ![Architecture](./assets/data-model.png)
+
+### Socket.io
+
+![Socket.io](./assets/socket.io.png)
 
 ```bash
 
@@ -53,9 +59,7 @@ Any environment configuration steps.
 │       └── vendor-hanlder.test.js
 ├── hub.js
 ├── package-lock.json
-├── package.json
-└── server
-
+└── package.json
 ```
 
 ### Languages & tools
