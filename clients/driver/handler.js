@@ -1,20 +1,15 @@
 function transit(socket, payload) {
-  setTimeout(() => {
-    console.log("DRIVER", "picked up", payload);
-  }, 2000);
-
-  setTimeout(() => {
-    socket.emit("inTransit", payload);
-  }, 3000);
+  socket.emit("join", {
+    clientId: "driver",
+    store: payload.name + " Driver",
+  });
+  console.log("DRIVER", "picked up", payload);
+  socket.emit("inTransit", payload);
 }
 
 function delivered(socket, payload) {
-  setTimeout(() => {
-    console.log("DRIVER", "delivered", payload);
-  }, 2000);
-  setTimeout(() => {
-    socket.emit("delivered", payload);
-  }, 3000);
+  console.log("DRIVER", "delivered", payload);
+  socket.emit("delivered", payload);
 }
 
 module.exports = { transit, delivered };
