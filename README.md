@@ -26,13 +26,7 @@ Any environment configuration steps.
 
 ## Architecture
 
-### Event Driven Applications
-
 ![Architecture](./assets/data-model.png)
-
-### Socket.io
-
-![Socket.io](./assets/socket.io.png)
 
 ```bash
 
@@ -47,19 +41,19 @@ Any environment configuration steps.
 ├── assets
 │   ├── .DS_Store
 │   └── data-model.png
-├── clients
-│   ├── driver
-│   │   ├── driver-handler.test.js
-│   │   ├── handler.js
-│   │   └── index.js
-│   ├── socket.js
-│   └── vendor
-│       ├── handler.js
-│       ├── index.js
-│       └── vendor-hanlder.test.js
+├── driver
+│   ├── driver-handler.test.js
+│   ├── handler.js
+│   └── index.js
+├── eventPool.js
 ├── hub.js
 ├── package-lock.json
-└── package.json
+├── package.json
+└── vendor
+    ├── handler.js
+    ├── index.js
+    └── vendor-hanlder.test.js
+
 ```
 
 ### Languages & tools
@@ -68,12 +62,7 @@ Any environment configuration steps.
 * Jest
 * Node
 * Chance
-* Nodemon
-* socket.io
-* socket.io-client
 
 ## Change Log
-
-0.0.2 - Socket.io refactor
 
 0.0.1 - Initial release

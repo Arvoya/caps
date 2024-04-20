@@ -10,12 +10,8 @@ describe("Driver handler", () => {
 
     transit(socket, payload);
 
-    setTimeout(() => {
-      expect(console.log).toHaveBeenCalledWith("DRIVER", "picked up", payload);
-    }, 2000);
-    setTimeout(() => {
-      expect(socket.emit).toHaveBeenCalledWith("inTransit", payload);
-    }, 3000);
+    expect(console.log).toHaveBeenCalledWith("DRIVER", "picked up", payload);
+    expect(socket.emit).toHaveBeenCalledWith("inTransit", payload);
   });
 
   it("should return delivered emit and console.log", () => {
@@ -27,11 +23,7 @@ describe("Driver handler", () => {
 
     delivered(socket, payload);
 
-    setTimeout(() => {
-      expect(console.log).toHaveBeenCalledWith("DRIVER", "delivered", payload);
-    }, 2000);
-    setTimeout(() => {
-      expect(socket.emit).toHaveBeenCalledWith("delivered", payload);
-    }, 3000);
+    expect(console.log).toHaveBeenCalledWith("DRIVER", "delivered", payload);
+    expect(socket.emit).toHaveBeenCalledWith("delivered", payload);
   });
 });

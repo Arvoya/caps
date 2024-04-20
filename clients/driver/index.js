@@ -1,18 +1,13 @@
-const handler = require("./handler.js");
+const { transit, delivered } = require("./handler.js");
 const io = require("socket.io-client");
 
 let socket = io.connect("http://localhost:3000/caps");
 
-socket.emit("join", {
-  clientId: "driver",
-  store: "1-206-flowers",
-});
-
-socket.on("join", console.log);
+socket.emit("get-packages");
 
 function listen() {
-  socket.on("pickup", (payload) => handler.transit(socket, payload));
-  socket.on("inTransit", (payload) => handler.delivered(socket, payload));
+  socket.on("pickup", (payload) => transit(socket, payload));
+  socket.on("inTransit", (payload) => delivered(socket, payload));
 }
 
 listen();
